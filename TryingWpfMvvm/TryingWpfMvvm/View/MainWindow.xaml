@@ -1,0 +1,28 @@
+﻿<Window x:Class="TryingWpfMvvm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TryingWpfMvvm" 
+        xmlns:Convertor="clr-namespace:TryingWpfMvvm.Convertors"
+        xmlns:my="clr-namespace:TryingWpfMvvm.View"
+        mc:Ignorable="d"
+        Title="Gun shop app" Height="600" Width="600"
+        Style="{StaticResource MyStyle}">
+        
+    <Window.Resources>
+        <Convertor:UserControlConverter x:Key="my:UserControlConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+            <my:OrdersUserControl  Margin="20"/>
+            <Button x:Name="MakeNewOrderButton" HorizontalAlignment="Stretch" Height="50" FontSize="18" VerticalAlignment="Center" Content="Make new Order" Command="{Binding MakeNewOrder}"/>
+        </StackPanel>
+       
+    </Grid>
+</Window>

@@ -1,0 +1,24 @@
+﻿<Application x:Class="TryingWpfMvvm.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TryingWpfMvvm"
+             xmlns:vm="clr-namespace:TryingWpfMvvm.ViewModel"
+             StartupUri="View/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="MyStyle" TargetType="Control">
+                <Setter Property="FontFamily" Value="Terminal"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter  Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="WhiteSmoke" Offset="0.6" />
+                            <GradientStop Color="LightGray" Offset="0.9" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
